@@ -1,0 +1,72 @@
+version: "3.5"
+
+services:
+  admin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - database:${MYSQL_HOST}
+    depends_on:
+      - database
+    ports:
+      - "8080:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PMA_HOST: ${MYSQL_HOST}
+      PMA_PORT: ${MYSQL_PORT}
+    env_file: .env
+    
+  database:
+    image: mysql:5.7
+    container_name: ${MYSQL_HOST}
+    restart: always
+    volumes:
+      - database:/var/lib/mysql:rw
+      - ./db:/docker-entrypoint-initdb.d
+    ports:
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
+    environment:
+      MYSQL_TCP_PORT: ${MYSQL_PORT}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+    env_file: .env
+
+  backend:
+    build: ./backend/
+    working_dir: /usr/src/app
+    restart: always
+    container_name: backend
+    links:
+      - database:${MYSQL_HOST}
+    depends_on:
+      - database
+    ports:
+      - "${BACKEND_PORT}:3000"
+    volumes:
+      - ./backend:/usr/src/app
+      - backend-node-modules:/usr/src/app/node_modules
+    expose:
+      - "${BACKEND_PORT}"
+    command: "npm run start:dev"
+    env_file: .env
+
+  frontend:
+    build: ./frontend/
+    working_dir: /usr/src/app
+    restart: always
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT}:3000"
+    volumes:
+      - ./frontend:/usr/src/app
+      - frontend-node-modules:/usr/src/app/node_modules
+    expose:
+      - "${FRONTEND_PORT}"
+    command: "npm run start"
+    env_file: .env
+
+volumes:
+  backend-node-modules:
+  frontend-node-modules:
+  database:
