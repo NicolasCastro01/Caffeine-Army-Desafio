@@ -1,0 +1,22 @@
+#login-button {
+  border-radius: 4px;
+  width: 328px;
+  height: 48px;
+  background-color: #FB637E;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin-top: 48px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 1240px) {
+  #login-button {
+    width: 408px;
+    margin-top: 40px;
+  }
+}

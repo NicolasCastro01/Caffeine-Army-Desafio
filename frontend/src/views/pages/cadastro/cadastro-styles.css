@@ -1,0 +1,146 @@
+#register-screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFF;
+}
+
+#coffe-image-mob {
+  width: 100%;
+  height: 192px;
+}
+
+#coffe-image-desk {
+  display: none;
+  width: 684px;
+  height: 100%;
+}
+
+#login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
+#inputs-container {
+  width: 328px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#register-section>#logo {
+  margin-top: 38.94px;
+  width: 264px;
+  height: 17px;
+}
+
+#register-section>#text-info {
+  display: none;
+  color: #271718;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.42px;
+  margin-top: 73px;
+}
+
+#register-section>button {
+  margin-top: 48px;
+}
+
+#register-section>footer {
+  display: none;
+  width: 308px;
+  height: 50px;
+
+  color: #BFBFBF;
+  text-align: center;
+  letter-spacing: 0.1px;
+  font-size: 10px;
+  margin-top: 169px;
+}
+
+#register-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#text-field-label-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#text-field-label-container>input {
+  max-width: 408px;
+  height: 48px;
+  border-radius: 4px;
+  border: 2px solid #E2E2E2;
+  background-color: #FFF;
+
+  color: #271718;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.42px;
+  padding-left: 16px;
+}
+
+#text-field-label-container>input:active {
+  border: 2px solid #271718;
+}
+
+#text-field-label-container>label {
+  margin-left: 16px;
+  margin-bottom: 5px;
+
+  color: #271718;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.42px;
+}
+
+#text-field-label-container>#helper-text {
+  color: #D50000;
+}
+
+#account-redirect {
+  margin-top: 20px;
+}
+
+
+@media (min-width: 1240px) {
+  #register-screen {
+    flex-direction: row;
+  }
+
+  #register-section {
+    width: 100%;
+    padding: 0 132px;
+  }
+
+  #coffe-image-mob {
+    display: none;
+  }
+
+  #register-section>#logo {
+    width: 408px;
+    height: 26px;
+  }
+
+  #coffe-image-desk,
+  #register-section>#text-info,
+  #register-section>footer {
+    display: block;
+  }
+
+  #inputs-container {
+    width: 408px;
+  }
+}

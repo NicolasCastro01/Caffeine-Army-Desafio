@@ -1,0 +1,12 @@
+.search-button {
+  width: 48px;
+  height: 48px;
+  background-color: #FB637E;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.search-button:disabled {
+  background-color: #BFBFBF;
+}

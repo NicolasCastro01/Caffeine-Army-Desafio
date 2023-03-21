@@ -1,0 +1,7 @@
+.expand-arrow {
+  transition: all .3s ease-in-out;
+}
+
+.expand-arrow.true {
+  transform: rotate(180deg);
+}

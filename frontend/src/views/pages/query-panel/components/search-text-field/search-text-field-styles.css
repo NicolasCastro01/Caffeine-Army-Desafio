@@ -1,0 +1,55 @@
+#search-text-field-label-container {
+  display: flex;
+  margin-left: 1rem;
+  position: relative;
+}
+
+#search-text-field-label-container>svg {
+  position: absolute;
+  top: 0.8125rem;
+  left: 0.6875rem;
+}
+
+#search-text-field-label-container>input {
+  width: 14.5rem;
+  max-height: 2.875rem;
+  height: 2.875rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #E2E2E2;
+  background-color: #FFF;
+
+  color: #271718;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.0262rem;
+  padding: 0;
+  padding-left: 2.5rem;
+}
+
+#search-text-field-label-container>input:active {
+  border: 0.0625rem solid #271718;
+}
+
+#search-text-field-label-container>label {
+  margin-left: 1rem;
+  margin-bottom: 0.3125rem;
+
+  color: #271718;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.0262rem;
+}
+
+
+@media (min-width: 1240px) {
+  #search-text-field-label-container>input {
+    width: 100%;
+  }
+
+  #search-text-field-label-container {
+    width: 100%;
+    margin-left: 0;
+  }
+}
