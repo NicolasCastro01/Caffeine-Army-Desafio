@@ -19,6 +19,12 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 
 ## Inicialização
 
+Para instalar as dependências utilize:
+
+```bash
+  npm install
+```
+
 Para iniciar a API
 
 ```bash

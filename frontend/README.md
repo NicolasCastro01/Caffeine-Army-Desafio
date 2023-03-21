@@ -26,6 +26,12 @@ Caso queira fazer chamadas api para o docker, é necessário mudar o valor do EN
 
 ## Inicialização
 
+Para instalar as dependências utilize:
+
+```bash
+  npm install
+```
+
 Para iniciar o projeto
 
 ```bash
