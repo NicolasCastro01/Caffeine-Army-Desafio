@@ -62,7 +62,7 @@ function QueryPanel() {
 
     handleState('accessToken', accessToken);
     handleState('shopkeeper', { ...shopkeeperData });
-  }, []);
+  }, [navigate]);
 
   return (
     <div id="query-panel-screen">
